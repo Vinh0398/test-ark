@@ -205,6 +205,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     
     var limitedTrackingTimer: Timer?
     
+    func showBulkyTypeAlet(title: String, message: String, acceptButtonHandler: ((UIAlertAction) -> Void)?, restartButtonHandler: ((UIAlertAction) -> Void)?){
+        var actions = [UIAlertAction]()
+        actions.append(UIAlertAction(title: "Chấp nhận", style: .default, handler: acceptButtonHandler))
+        actions.append(UIAlertAction(title: "Restart", style: .default, handler: restartButtonHandler))
+        self.showAlert(title: "Mức cồng kềnh", message: message, actions: actions)
+    }
+    
     func startLimitedTrackingTimer() {
         guard limitedTrackingTimer == nil else { return }
         
@@ -315,12 +322,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor,_ notification: Notification) {
-        if let objectAnchor = anchor as? ARObjectAnchor {
-            if let testRun = self.testRun {
-                let messageText = getTitleBulky(notification)
-                displayMessage(messageText, expirationTime: testRun.resultDisplayDuration)
+        if state == .testing {
+            let bulkyTitle = String(format: "Mức cồng kềnh:", getTitleBulky(notification))
+            let messageTest = "Vui lòng kiểm tra lại mức cồng kềnh hàng hoá \n \(bulkyTitle) \nĐây có phải mức hàng hoá của bạn."
+            showBulkyTypeAlet(title: "Xác nhận mức cồng kềnh", message: messageTest, acceptButtonHandler: nil, restartButtonHandler: restartButtonTapped(_:))
             }
-        } else if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
+         else if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
             scan?.scannedObject.tryToAlignWithPlanes([planeAnchor])
             // After a plane was found, disable plane detection for performance reasons.
             sceneView.stopPlaneDetection()
