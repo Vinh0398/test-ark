@@ -191,7 +191,6 @@ extension ViewController {
             case .startARSession:
                 state = .notReady
             case .notReady:
-                state = .testing
             //case .scanning:
                 if let scan = scan {
                     switch scan.state {

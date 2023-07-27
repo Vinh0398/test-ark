@@ -205,7 +205,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     
     var limitedTrackingTimer: Timer?
     
-    func showBulkyTypeAlet(title: String, message: String, acceptButtonHandler: ((UIAlertAction) -> Void)?, restartButtonHandler: ((UIAlertAction) -> Void)?){
+    func showBulkyTypeAlert(title: String, message: String, acceptButtonHandler: ((UIAlertAction) -> Void)?, restartButtonHandler: ((UIAlertAction) -> Void)?){
         var actions = [UIAlertAction]()
         actions.append(UIAlertAction(title: "Chấp nhận", style: .default, handler: acceptButtonHandler))
         actions.append(UIAlertAction(title: "Restart", style: .default, handler: restartButtonHandler))
@@ -323,9 +323,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor,_ notification: Notification) {
         if state == .testing {
-            let bulkyTitle = String(format: "Mức cồng kềnh:", getTitleBulky(notification))
+            let bulkyTitle = "Mức cồng kềnh: \(getTitleBulky(notification))"
             let messageTest = "Vui lòng kiểm tra lại mức cồng kềnh hàng hoá \n \(bulkyTitle) \nĐây có phải mức hàng hoá của bạn."
-            showBulkyTypeAlet(title: "Xác nhận mức cồng kềnh", message: messageTest, acceptButtonHandler: nil, restartButtonHandler: restartButtonTapped(_:))
+            showBulkyTypeAlert(title: "Xác nhận mức cồng kềnh", message: messageTest, acceptButtonHandler: nil, restartButtonHandler: restartButtonTapped(_:))
             }
          else if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
             scan?.scannedObject.tryToAlignWithPlanes([planeAnchor])
@@ -365,7 +365,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         let xString = String(format: "Dài: %.2f m", box.extent.x)
         let yString = String(format: "Rộng: %.2f m", box.extent.y)
         let zString = String(format: "Cao: %.2f m", box.extent.z)
-        let bulkyTitle = String(format: "Mức cồng kềnh: ", getTitleBulky(notification))
+        let bulkyTitle = "Mức cồng kềnh: \(getTitleBulky(notification))"
         displayMessage("\(xString), \(yString), \(zString)\n \(bulkyTitle)", expirationTime: 1.5)
     }
     
