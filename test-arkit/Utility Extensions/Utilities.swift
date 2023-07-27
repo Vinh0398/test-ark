@@ -153,40 +153,6 @@ extension SCNNode {
         }
     }
     
-    func load3DModel(from url: URL) -> SCNNode? {
-        guard let scene = try? SCNScene(url: url, options: nil) else {
-            print("Error: Failed to load 3D model from file \(url)")
-            return nil
-        }
-        
-        let node = SCNNode()
-        for child in scene.rootNode.childNodes {
-            node.addChildNode(child)
-        }
-        
-        // If there are no light sources in the model, add some
-        let lightNodes = node.childNodes(passingTest: { node, _ in
-            return node.light != nil
-        })
-        if lightNodes.isEmpty {
-            let ambientLight = SCNLight()
-            ambientLight.type = .ambient
-            ambientLight.intensity = 100
-            let ambientLightNode = SCNNode()
-            ambientLightNode.light = ambientLight
-            node.addChildNode(ambientLightNode)
-            
-            let directionalLight = SCNLight()
-            directionalLight.type = .directional
-            directionalLight.intensity = 500
-            let directionalLightNode = SCNNode()
-            directionalLightNode.light = directionalLight
-            node.addChildNode(directionalLightNode)
-        }
-        
-        return node
-    }
-    
     func displayNodeHierarchyOnTop(_ isOnTop: Bool) {
         // Recursivley traverses the node's children to update the rendering order depending on the `isOnTop` parameter.
         func updateRenderOrder(for node: SCNNode) {
@@ -261,21 +227,4 @@ func dragPlaneTransform(forPlaneNormal planeNormalRay: Ray, camera: SCNNode) -> 
                      SIMD4<Float>(yVector, 0),
                      SIMD4<Float>(zVector, 0),
                      SIMD4<Float>(planeNormalRay.origin, 1)])
-}
-
-extension ARReferenceObject {
-    func mergeInBackground(with otherReferenceObject: ARReferenceObject, completion: @escaping (ARReferenceObject?, Error?) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            do {
-                let mergedObject = try self.merging(otherReferenceObject)
-                DispatchQueue.main.async {
-                    completion(mergedObject, nil)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            }
-        }
-    }
 }

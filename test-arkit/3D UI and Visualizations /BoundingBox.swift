@@ -86,8 +86,8 @@ class BoundingBox: SCNNode {
         case .ready, .defineBoundingBox:
             resetCapturingProgress()
             sides.forEach { $0.value.isHidden = false }
-        case .scanning:
-            sides.forEach { $0.value.isHidden = false }
+//        case .scanning:
+//            sides.forEach { $0.value.isHidden = false }
         case .adjustingOrigin:
             // Hide the sides while adjusting the origin.
             sides.forEach { $0.value.isHidden = true }

@@ -33,11 +33,11 @@ class Wireframe: SCNNode {
         
         setupShader()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(flash),
-                                               name: ObjectOrigin.movedOutsideBoxNotification,
-                                               object: nil)
-    }
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(flash),
+//                                               name: ObjectOrigin.movedOutsideBoxNotification,
+//                                               object: nil)
+   }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

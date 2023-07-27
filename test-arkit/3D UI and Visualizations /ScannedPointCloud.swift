@@ -47,10 +47,10 @@ class ScannedPointCloud: SCNNode, PointCloud {
                                                selector: #selector(self.boundingBoxPositionOrExtentChanged(_:)),
                                                name: BoundingBox.extentChangedNotification,
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.boundingBoxPositionOrExtentChanged(_:)),
-                                               name: BoundingBox.positionChangedNotification,
-                                               object: nil)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(self.boundingBoxPositionOrExtentChanged(_:)),
+//                                               name: BoundingBox.positionChangedNotification,
+//                                               object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.scannedObjectPositionChanged(_:)),
                                                name: ScannedObject.positionChangedNotification,
@@ -126,7 +126,7 @@ class ScannedPointCloud: SCNNode, PointCloud {
     private func scanningStateChanged(_ notification: Notification) {
         guard let state = notification.userInfo?[Scan.stateUserInfoKey] as? Scan.State else { return }
         switch state {
-        case .ready, .scanning, .defineBoundingBox:
+        case .ready, .defineBoundingBox:
             self.isHidden = false
         case .adjustingOrigin:
             self.isHidden = true

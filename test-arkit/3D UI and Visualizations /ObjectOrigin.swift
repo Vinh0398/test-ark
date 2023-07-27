@@ -66,7 +66,7 @@ class ObjectOrigin: SCNNode {
         addChildNode(yAxis)
         addChildNode(zAxis)
         
-        set3DModel(ViewController.instance?.modelURL, extentForScaling: extent)
+//        set3DModel(ViewController.instance?.modelURL, extentForScaling: extent)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.scanningStateChanged(_:)),
                                                name: Scan.stateChangedNotification, object: nil)
@@ -75,28 +75,28 @@ class ObjectOrigin: SCNNode {
         isHidden = true
     }
     
-    func set3DModel(_ url: URL?, extentForScaling: SIMD3<Float>?=nil) {
-        customModel?.removeFromParentNode()
-        customModel = nil
-        
-        if let url = url, let model = load3DModel(from: url) {
-            ViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
-                self.addChildNode(model)
-            })
-            customModel = model
-            
-            xAxis.displayNodeHierarchyOnTop(true)
-            yAxis.displayNodeHierarchyOnTop(true)
-            zAxis.displayNodeHierarchyOnTop(true)
-        } else {
-            xAxis.displayNodeHierarchyOnTop(false)
-            yAxis.displayNodeHierarchyOnTop(false)
-            zAxis.displayNodeHierarchyOnTop(false)
-        }
-        
-        adjustToExtent(extentForScaling)
-    }
-    
+//    func set3DModel(_ url: URL?, extentForScaling: SIMD3<Float>?=nil) {
+//        customModel?.removeFromParentNode()
+//        customModel = nil
+//
+//        if let url = url, let model = load3DModel(from: url) {
+//            ViewController.instance?.sceneView.prepare([model], completionHandler: { _ in
+//                self.addChildNode(model)
+//            })
+//            customModel = model
+//
+//            xAxis.displayNodeHierarchyOnTop(true)
+//            yAxis.displayNodeHierarchyOnTop(true)
+//            zAxis.displayNodeHierarchyOnTop(true)
+//        } else {
+//            xAxis.displayNodeHierarchyOnTop(false)
+//            yAxis.displayNodeHierarchyOnTop(false)
+//            zAxis.displayNodeHierarchyOnTop(false)
+//        }
+//
+//        adjustToExtent(extentForScaling)
+//    }
+//
     @objc
     func boundingBoxExtentChanged(_ notification: Notification) {
         guard let boundingBox = notification.object as? BoundingBox else { return }
@@ -293,7 +293,7 @@ class ObjectOrigin: SCNNode {
     private func scanningStateChanged(_ notification: Notification) {
         guard let state = notification.userInfo?[Scan.stateUserInfoKey] as? Scan.State else { return }
         switch state {
-        case .ready, .defineBoundingBox, .scanning:
+        case .ready, .defineBoundingBox:
             self.isHidden = true
         case .adjustingOrigin:
             self.isHidden = false
@@ -316,3 +316,4 @@ class ObjectOrigin: SCNNode {
         return false
     }
 }
+//

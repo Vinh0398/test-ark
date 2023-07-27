@@ -54,10 +54,6 @@ class ScannedObject: SCNNode {
         self.boundingBox?.hasBeenAdjustedByUser = true
     }
     
-    func set3DModel(_ url: URL?) {
-        self.origin?.set3DModel(url, extentForScaling: boundingBox?.extent)
-    }
-    
     func createOrMoveBoundingBox(screenPos: CGPoint) {
         if let boundingBox = self.boundingBox {
             if !boundingBox.isHit(screenPos: screenPos) {
@@ -68,8 +64,6 @@ class ScannedObject: SCNNode {
                 }
                 self.simdWorldPosition = result.worldTransform.position
             }
-        } else {
-            createBoundingBox(screenPos: screenPos)
         }
     }
     
@@ -230,8 +224,8 @@ class ScannedObject: SCNNode {
             }
             ghostBoundingBox?.removeFromParentNode()
             ghostBoundingBox = nil
-        case .scanning:
-            break
+//        case .scanning:
+//            break
         case .adjustingOrigin:
             moveOriginToBottomOfBoundingBox()
         }

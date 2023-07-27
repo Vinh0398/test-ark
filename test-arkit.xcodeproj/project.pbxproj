@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583DC25D2A70DC5000A5E4E7 /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC25C2A70DC5000A5E4E7 /* ObjectOrigin.swift */; };
+		583DC25F2A71030E00A5E4E7 /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC25E2A71030E00A5E4E7 /* DetectedObject.swift */; };
+		583DC2642A71063200A5E4E7 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC2632A71063200A5E4E7 /* ScannedPointCloud.swift */; };
+		583DC2672A71069E00A5E4E7 /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC2662A71069E00A5E4E7 /* ScannedObject.swift */; };
+		583DC2692A71075000A5E4E7 /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC2682A71075000A5E4E7 /* ObjectOriginAxis.swift */; };
+		583DC26D2A720D1300A5E4E7 /* BulkyTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583DC26C2A720D1300A5E4E7 /* BulkyTypes.swift */; };
 		58AE940A2A66718D0064A661 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AE94092A66718D0064A661 /* Preview Assets.xcassets */; };
 		58AE94112A6671BA0064A661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58AE94102A6671BA0064A661 /* Assets.xcassets */; };
 		58AE941C2A6671D40064A661 /* TestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94132A6671D40064A661 /* TestRun.swift */; };
 		58AE941D2A6671D40064A661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94142A6671D40064A661 /* ViewController.swift */; };
 		58AE941E2A6671D40064A661 /* ViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94152A6671D40064A661 /* ViewController+NavigationBar.swift */; };
 		58AE941F2A6671D40064A661 /* ViewController+SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94162A6671D40064A661 /* ViewController+SessionInfo.swift */; };
-		58AE94202A6671D40064A661 /* ShareScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94172A6671D40064A661 /* ShareScanViewController.swift */; };
 		58AE94212A6671D40064A661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94182A6671D40064A661 /* AppDelegate.swift */; };
 		58AE94222A6671D40064A661 /* ViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94192A6671D40064A661 /* ViewController+Gestures.swift */; };
 		58AE94232A6671D40064A661 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE941A2A6671D40064A661 /* Scan.swift */; };
@@ -24,19 +29,12 @@
 		58AE94302A6671EC0064A661 /* ThresholdRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE942D2A6671EC0064A661 /* ThresholdRotationGestureRecognizer.swift */; };
 		58AE94312A6671EC0064A661 /* ThresholdPinchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE942E2A6671EC0064A661 /* ThresholdPinchGestureRecognizer.swift */; };
 		58AE94322A6671EC0064A661 /* ThresholdPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE942F2A6671EC0064A661 /* ThresholdPanGestureRecognizer.swift */; };
-		58AE94412A6671F40064A661 /* ScannedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94342A6671F40064A661 /* ScannedPointCloud.swift */; };
-		58AE94422A6671F40064A661 /* ScannedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94352A6671F40064A661 /* ScannedObject.swift */; };
 		58AE94432A6671F40064A661 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94362A6671F40064A661 /* Wireframe.swift */; };
 		58AE94442A6671F40064A661 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94372A6671F40064A661 /* BoundingBox.swift */; };
 		58AE94452A6671F40064A661 /* BoundingBoxSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94382A6671F40064A661 /* BoundingBoxSide.swift */; };
-		58AE94462A6671F40064A661 /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94392A6671F40064A661 /* DetectedObject.swift */; };
 		58AE94472A6671F40064A661 /* Snapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943A2A6671F40064A661 /* Snapping.swift */; };
-		58AE94482A6671F40064A661 /* DetectedPointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943B2A6671F40064A661 /* DetectedPointCloud.swift */; };
-		58AE94492A6671F40064A661 /* ObjectOriginAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943C2A6671F40064A661 /* ObjectOriginAxis.swift */; };
 		58AE944A2A6671F40064A661 /* PointCloud+CreateVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943D2A6671F40064A661 /* PointCloud+CreateVisualization.swift */; };
-		58AE944B2A6671F40064A661 /* DetectedBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943E2A6671F40064A661 /* DetectedBoundingBox.swift */; };
 		58AE944C2A6671F40064A661 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE943F2A6671F40064A661 /* Tile.swift */; };
-		58AE944D2A6671F50064A661 /* ObjectOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94402A6671F40064A661 /* ObjectOrigin.swift */; };
 		58AE94512A6671FC0064A661 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE944F2A6671FC0064A661 /* Utilities.swift */; };
 		58AE94522A6671FC0064A661 /* ARCameraTrackingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AE94502A6671FC0064A661 /* ARCameraTrackingState.swift */; };
 		58AE94582A6672040064A661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58AE94542A6672040064A661 /* LaunchScreen.storyboard */; };
@@ -45,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583DC25C2A70DC5000A5E4E7 /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOrigin.swift; sourceTree = "<group>"; };
+		583DC25E2A71030E00A5E4E7 /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
+		583DC2632A71063200A5E4E7 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
+		583DC2662A71069E00A5E4E7 /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
+		583DC2682A71075000A5E4E7 /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
+		583DC26C2A720D1300A5E4E7 /* BulkyTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulkyTypes.swift; sourceTree = "<group>"; };
 		58AE93FF2A66718C0064A661 /* test-arkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-arkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58AE94092A66718D0064A661 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		58AE94102A6671BA0064A661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../ScanningAndDetecting3DObjects/ScanningApp/Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +56,6 @@
 		58AE94142A6671D40064A661 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		58AE94152A6671D40064A661 /* ViewController+NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		58AE94162A6671D40064A661 /* ViewController+SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SessionInfo.swift"; sourceTree = "<group>"; };
-		58AE94172A6671D40064A661 /* ShareScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareScanViewController.swift; sourceTree = "<group>"; };
 		58AE94182A6671D40064A661 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58AE94192A6671D40064A661 /* ViewController+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Gestures.swift"; sourceTree = "<group>"; };
 		58AE941A2A6671D40064A661 /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
@@ -63,19 +66,12 @@
 		58AE942D2A6671EC0064A661 /* ThresholdRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdRotationGestureRecognizer.swift; sourceTree = "<group>"; };
 		58AE942E2A6671EC0064A661 /* ThresholdPinchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPinchGestureRecognizer.swift; sourceTree = "<group>"; };
 		58AE942F2A6671EC0064A661 /* ThresholdPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		58AE94342A6671F40064A661 /* ScannedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedPointCloud.swift; sourceTree = "<group>"; };
-		58AE94352A6671F40064A661 /* ScannedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedObject.swift; sourceTree = "<group>"; };
 		58AE94362A6671F40064A661 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		58AE94372A6671F40064A661 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		58AE94382A6671F40064A661 /* BoundingBoxSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBoxSide.swift; sourceTree = "<group>"; };
-		58AE94392A6671F40064A661 /* DetectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
 		58AE943A2A6671F40064A661 /* Snapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapping.swift; sourceTree = "<group>"; };
-		58AE943B2A6671F40064A661 /* DetectedPointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedPointCloud.swift; sourceTree = "<group>"; };
-		58AE943C2A6671F40064A661 /* ObjectOriginAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOriginAxis.swift; sourceTree = "<group>"; };
 		58AE943D2A6671F40064A661 /* PointCloud+CreateVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PointCloud+CreateVisualization.swift"; sourceTree = "<group>"; };
-		58AE943E2A6671F40064A661 /* DetectedBoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBoundingBox.swift; sourceTree = "<group>"; };
 		58AE943F2A6671F40064A661 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
-		58AE94402A6671F40064A661 /* ObjectOrigin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectOrigin.swift; sourceTree = "<group>"; };
 		58AE944F2A6671FC0064A661 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		58AE94502A6671FC0064A661 /* ARCameraTrackingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCameraTrackingState.swift; sourceTree = "<group>"; };
 		58AE94552A6672040064A661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,14 +112,14 @@
 			children = (
 				58AE94622A6676C90064A661 /* Info.plist */,
 				58AE945A2A66720D0064A661 /* art.scnassets */,
+				58AE94102A6671BA0064A661 /* Assets.xcassets */,
+				58AE94332A6671F40064A661 /* 3D UI and Visualizations  */,
+				58AE94122A6671D40064A661 /* Controllers */,
+				58AE942C2A6671EC0064A661 /* Gesture Recognizers */,
+				58AE94082A66718D0064A661 /* Preview Content */,
 				58AE94532A6672040064A661 /* Storyboards */,
 				58AE944E2A6671FC0064A661 /* Utility Extensions */,
-				58AE94332A6671F40064A661 /* 3D UI and Visualizations  */,
-				58AE942C2A6671EC0064A661 /* Gesture Recognizers */,
 				58AE94252A6671E20064A661 /* Views */,
-				58AE94122A6671D40064A661 /* Controllers */,
-				58AE94102A6671BA0064A661 /* Assets.xcassets */,
-				58AE94082A66718D0064A661 /* Preview Content */,
 			);
 			path = "test-arkit";
 			sourceTree = "<group>";
@@ -143,7 +139,6 @@
 				58AE94142A6671D40064A661 /* ViewController.swift */,
 				58AE94152A6671D40064A661 /* ViewController+NavigationBar.swift */,
 				58AE94162A6671D40064A661 /* ViewController+SessionInfo.swift */,
-				58AE94172A6671D40064A661 /* ShareScanViewController.swift */,
 				58AE94182A6671D40064A661 /* AppDelegate.swift */,
 				58AE94192A6671D40064A661 /* ViewController+Gestures.swift */,
 				58AE941A2A6671D40064A661 /* Scan.swift */,
@@ -175,19 +170,18 @@
 		58AE94332A6671F40064A661 /* 3D UI and Visualizations  */ = {
 			isa = PBXGroup;
 			children = (
-				58AE94342A6671F40064A661 /* ScannedPointCloud.swift */,
-				58AE94352A6671F40064A661 /* ScannedObject.swift */,
+				583DC26C2A720D1300A5E4E7 /* BulkyTypes.swift */,
 				58AE94362A6671F40064A661 /* Wireframe.swift */,
 				58AE94372A6671F40064A661 /* BoundingBox.swift */,
 				58AE94382A6671F40064A661 /* BoundingBoxSide.swift */,
-				58AE94392A6671F40064A661 /* DetectedObject.swift */,
 				58AE943A2A6671F40064A661 /* Snapping.swift */,
-				58AE943B2A6671F40064A661 /* DetectedPointCloud.swift */,
-				58AE943C2A6671F40064A661 /* ObjectOriginAxis.swift */,
+				583DC25C2A70DC5000A5E4E7 /* ObjectOrigin.swift */,
+				583DC25E2A71030E00A5E4E7 /* DetectedObject.swift */,
+				583DC2662A71069E00A5E4E7 /* ScannedObject.swift */,
+				583DC2682A71075000A5E4E7 /* ObjectOriginAxis.swift */,
+				583DC2632A71063200A5E4E7 /* ScannedPointCloud.swift */,
 				58AE943D2A6671F40064A661 /* PointCloud+CreateVisualization.swift */,
-				58AE943E2A6671F40064A661 /* DetectedBoundingBox.swift */,
 				58AE943F2A6671F40064A661 /* Tile.swift */,
-				58AE94402A6671F40064A661 /* ObjectOrigin.swift */,
 			);
 			path = "3D UI and Visualizations ";
 			sourceTree = "<group>";
@@ -286,33 +280,31 @@
 				58AE94452A6671F40064A661 /* BoundingBoxSide.swift in Sources */,
 				58AE94242A6671D40064A661 /* ViewController+ApplicationState.swift in Sources */,
 				58AE94212A6671D40064A661 /* AppDelegate.swift in Sources */,
+				583DC25F2A71030E00A5E4E7 /* DetectedObject.swift in Sources */,
 				58AE94292A6671E20064A661 /* MessageLabel.swift in Sources */,
-				58AE94462A6671F40064A661 /* DetectedObject.swift in Sources */,
+				583DC25D2A70DC5000A5E4E7 /* ObjectOrigin.swift in Sources */,
 				58AE941D2A6671D40064A661 /* ViewController.swift in Sources */,
 				58AE94442A6671F40064A661 /* BoundingBox.swift in Sources */,
 				58AE94472A6671F40064A661 /* Snapping.swift in Sources */,
 				58AE94302A6671EC0064A661 /* ThresholdRotationGestureRecognizer.swift in Sources */,
-				58AE944B2A6671F40064A661 /* DetectedBoundingBox.swift in Sources */,
-				58AE94482A6671F40064A661 /* DetectedPointCloud.swift in Sources */,
 				58AE94232A6671D40064A661 /* Scan.swift in Sources */,
-				58AE94422A6671F40064A661 /* ScannedObject.swift in Sources */,
 				58AE94512A6671FC0064A661 /* Utilities.swift in Sources */,
+				583DC2692A71075000A5E4E7 /* ObjectOriginAxis.swift in Sources */,
 				58AE941E2A6671D40064A661 /* ViewController+NavigationBar.swift in Sources */,
+				583DC2642A71063200A5E4E7 /* ScannedPointCloud.swift in Sources */,
+				583DC26D2A720D1300A5E4E7 /* BulkyTypes.swift in Sources */,
 				58AE94222A6671D40064A661 /* ViewController+Gestures.swift in Sources */,
 				58AE944C2A6671F40064A661 /* Tile.swift in Sources */,
 				58AE94312A6671EC0064A661 /* ThresholdPinchGestureRecognizer.swift in Sources */,
+				583DC2672A71069E00A5E4E7 /* ScannedObject.swift in Sources */,
 				58AE94322A6671EC0064A661 /* ThresholdPanGestureRecognizer.swift in Sources */,
 				58AE942B2A6671E20064A661 /* RoundedButton.swift in Sources */,
 				58AE94522A6671FC0064A661 /* ARCameraTrackingState.swift in Sources */,
-				58AE94202A6671D40064A661 /* ShareScanViewController.swift in Sources */,
-				58AE944D2A6671F50064A661 /* ObjectOrigin.swift in Sources */,
 				58AE942A2A6671E20064A661 /* FlashlightButton.swift in Sources */,
 				58AE94432A6671F40064A661 /* Wireframe.swift in Sources */,
 				58AE941F2A6671D40064A661 /* ViewController+SessionInfo.swift in Sources */,
-				58AE94492A6671F40064A661 /* ObjectOriginAxis.swift in Sources */,
 				58AE941C2A6671D40064A661 /* TestRun.swift in Sources */,
 				58AE944A2A6671F40064A661 /* PointCloud+CreateVisualization.swift in Sources */,
-				58AE94412A6671F40064A661 /* ScannedPointCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

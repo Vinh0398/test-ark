@@ -36,17 +36,17 @@ class ThresholdPanGestureRecognizer: UIPanGestureRecognizer {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
-        super.touchesBegan(touches, with: event)
-        
-        initialLocation = location(in: view)
-        
-        if let viewController = ViewController.instance, let object = viewController.scan?.objectToManipulate {
-            let objectPos = viewController.sceneView.projectPoint(object.worldPosition)
-            offsetToObject.x = CGFloat(objectPos.x) - initialLocation.x
-            offsetToObject.y = CGFloat(objectPos.y) - initialLocation.y
-        }
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+//        super.touchesBegan(touches, with: event)
+//
+//        initialLocation = location(in: view)
+//
+//        if let viewController = ViewController.instance, let object = viewController.scan?.objectToManipulate {
+//            let objectPos = viewController.sceneView.projectPoint(object.worldPosition)
+//            offsetToObject.x = CGFloat(objectPos.x) - initialLocation.x
+//            offsetToObject.y = CGFloat(objectPos.y) - initialLocation.y
+//        }
+//    }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
