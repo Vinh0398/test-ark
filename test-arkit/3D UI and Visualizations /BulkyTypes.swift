@@ -30,15 +30,17 @@ enum BulkyTypes {
         }
     }
     
-    func parseBulkyiDimension(bulkyDimens: BulkyDimension) -> BulkyTypes{
-        if(bulkyDimens.width <= 0.60 && bulkyDimens.height <= 0.50, bulkyDimens.depth <= 0.60){
+    static func parseBulkyDimension(bulkyDimension :BulkyDimension) -> BulkyTypes{
+        if (bulkyDimension.width <= 0.60 && bulkyDimension.height <= 0.50 && bulkyDimension.depth <= 0.60){
             return BulkyTypes.standard
         }
-        if(bulkyDimens.width <= 0.70 && bulkyDimens.height <= 0.60 && bulkyDimens.depth <= 0.70){
+        if (bulkyDimension.width <= 0.70 && bulkyDimension.height <= 0.60 && bulkyDimension.depth <= 0.70){
             return BulkyTypes.tire1
-        }if(bulkyDimens.width <= 0.90 && bulkyDimens.height <= 0.70 && bulkyDimens.depth <= 0.90){
+        }
+        if (bulkyDimension.width <= 0.90 && bulkyDimension.height <= 0.70 && bulkyDimension.depth <= 0.90){
             return BulkyTypes.tire2
-        }if(bulkyDimens.width <= 1.00 && bulkyDimens.height <= 0.80 && bulkyDimens.depth <= 1.00){
+        }
+        if (bulkyDimension.width <= 1.00 && bulkyDimension.height <= 0.80 && bulkyDimension.depth <= 1.00){
             return BulkyTypes.tire3
         }
         return BulkyTypes.overload

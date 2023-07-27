@@ -35,6 +35,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
     
     var referenceObjectToMerge: ARReferenceObject?
     var referenceObjectToTest: ARReferenceObject?
+    var bulkyDimen: BulkyDimension?
+    
     internal var testRun: TestRun?
     
     internal var messageExpirationTimer: Timer?
@@ -83,10 +85,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
                                        name: BoundingBox.scanPercentageChangedNotification, object: nil)
 //        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
 //                                       name: BoundingBox.extentChangedNotification, object: nil)
-//        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
-//                                       name: BoundingBox.positionChangedNotification, object: nil)
-//        notificationCenter.addObserver(self, selector: #selector(objectOriginPositionChanged(_:)),
-//                                       name: ObjectOrigin.positionChangedNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(boundingBoxPositionOrExtentChanged(_:)),
+                                       name: BoundingBox.positionChangedNotification, object: nil)
+       notificationCenter.addObserver(self, selector: #selector(objectOriginPositionChanged(_:)),
+                                       name: ObjectOrigin.positionChangedNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(displayWarningIfInLowPowerMode),
                                        name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
         
@@ -312,12 +314,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         //testRun?.updateOnEveryFrame()
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor,_ notification: Notification) {
         if let objectAnchor = anchor as? ARObjectAnchor {
             if let testRun = self.testRun {
-                let notification: Notification
-                guard let node = notification.object as? BoundingBox else { return }
-                let messageText = "\(testRun.getSizeObject(boudingbox: node))"
+                let messageText = getTitleBulky(notification)
                 displayMessage(messageText, expirationTime: testRun.resultDisplayDuration)
             }
         } else if state == .scanning, let planeAnchor = anchor as? ARPlaneAnchor {
@@ -347,8 +347,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate, UI
         let height = box.extent.y
         let depth = box.extent.z
         self.bulkyDimen = BulkyDimension(width: width, height: height, depth: depth, title: "")
-        let checkBulky = BulkyTypes.parseBulkyTypes(buckyDimension: self.bulkyDimen!).getBulkyDimension()
-        return checkBulky.title
+        let checkBulkyType = BulkyTypes.parseBulkyDimension(bulkyDimension: self.bulkyDimen!).getBulkyDimension()
+        return checkBulkyType.title
     }
     
     @objc
